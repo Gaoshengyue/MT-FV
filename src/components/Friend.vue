@@ -1,6 +1,7 @@
 <template>
   <div class="friend">
-Friend
+<spinner :type="types" :size="size" class="center-spin"></spinner>
+    <strong class="center-spin" style="font-size: 100%">伙伴开发中</strong>
   </div>
 </template>
 
@@ -9,7 +10,8 @@ export default {
   name: 'Friend',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      types: "crescent",
+      size:"30%"
     }
   }
 }

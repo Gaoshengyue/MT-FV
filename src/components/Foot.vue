@@ -28,7 +28,7 @@
         <img slot="icon" src="../assets/home/cat.png" >
         <img slot="icon-active" src="../assets/home/bluecat.png">
 
-        <span slot="label">我的</span>
+        <span slot="label">我的猫</span>
       </tabbar-item>
     </tabbar>
   </div>

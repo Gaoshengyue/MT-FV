@@ -1,15 +1,27 @@
 <template>
   <div class="hello">
-meiyici
+    <div v-if="show">
+<spinner :type="types" :size="size" class="center-spin"></spinner>
+    <strong class="center-spin" style="font-size: 100%">我的猫开发中</strong>
+      </div>
+    <div v-else class="">
+
+    </div>
   </div>
 </template>
 
 <script>
+ import { Spinner } from 'vux'
 export default {
   name: 'HelloWorld',
+  components:{
+    Spinner
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+        types: "bubbles",
+      size:"30%",
+      show:"1"
     }
   }
 }

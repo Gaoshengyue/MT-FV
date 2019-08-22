@@ -1,6 +1,7 @@
 <template>
   <div class="equipment">
-Equipment
+ <spinner :type="types" :size="size" class="center-spin"></spinner>
+    <strong class="center-spin" style="font-size: 100%">装备开发中</strong>
   </div>
 </template>
 
@@ -9,7 +10,8 @@ export default {
   name: 'Commodity',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      types: "dots",
+      size:"30%"
     }
   }
 }

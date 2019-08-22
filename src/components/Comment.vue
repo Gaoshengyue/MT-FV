@@ -1,15 +1,22 @@
 <template>
   <div class="comment">
-Comment
+ <spinner :type="types" :size="size" class="center-spin"></spinner>
+    <strong class="center-spin" style="font-size: 100%">猫态开发中</strong>
+
   </div>
 </template>
 
 <script>
+  // import { Spinner, Group, Cell } from 'vux'
 export default {
   name: 'Comment',
+  //  components: {
+  //   Spinner,
+  // },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+ types: "lines",
+      size:"30%"
     }
   }
 }
