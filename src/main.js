@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import { ButtonTab, ButtonTabItem } from 'vux'
+import 'remixicon/fonts/remixicon.css'
 
 Vue.config.productionTip = false
 
@@ -13,3 +15,12 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+Vue.component('button-tab', ButtonTab)
+Vue.component('button-tab-item', ButtonTabItem)
+import { Tabbar, TabbarItem } from 'vux'
+
+Vue.component('tabbar', Tabbar)
+Vue.component('tabbar-item', TabbarItem)
+
+
+
