@@ -32,7 +32,7 @@ export default {
     return {
         types: "bubbles",
       size:"30%",
-      show:""
+      show:"1"
     }
   }
 }
