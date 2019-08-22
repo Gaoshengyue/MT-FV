@@ -2,7 +2,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <Foot></Foot>
+    <Foot style="position: fixed;bottom: 0"></Foot>
   </div>
 </template>
 

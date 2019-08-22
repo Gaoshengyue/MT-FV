@@ -57,11 +57,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-  /*.foot{*/
-/*margin-top: calc(80%);*/
-    /*height: calc(20%);*/
-    /*width: calc(100%);*/
-    /*background: white;*/
+  .foot{
+margin-top: calc(80%);
+    height: calc(20%);
+    width: calc(100%);
+    background: white;
 
-  /*}*/
+  }
 </style>

@@ -4,10 +4,9 @@
 <spinner :type="types" :size="size" class="center-spin"></spinner>
     <strong class="center-spin" style="font-size: 100%">我的猫开发中</strong>
       </div>
-    <div v-else class=" container-fluid;" >
-      <div class="row" style="background-color: lightcoral;">
-        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2">
-
+    <div v-else class=" container-fluid" >
+      <div class="row" style="background-color: lightcoral;height: calc(20vh)">
+        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" >
         </div>
         <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
 
@@ -32,7 +31,7 @@ export default {
     return {
         types: "bubbles",
       size:"30%",
-      show:"1"
+      show:""
     }
   }
 }
@@ -41,18 +40,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
