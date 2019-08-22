@@ -6,12 +6,15 @@
       </div>
     <div v-else class=" container-fluid" >
       <div class="row" style="background-color: lightcoral;height: calc(20vh)">
-        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2" >
+        <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4" style="height: 100%;">
+          <img src="../assets/head/起司.jpg" alt="..." class="img-circle" width="100%"  height="70%" style="margin-top: 15%;text-align: center">
         </div>
-        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
-
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="height: 100%;">
+        <div style="margin-top: 40%;color: white">
+          <strong >{{username}}</strong>
         </div>
-        <div class="col-lg-7 col-sm-7 col-md-7 col-xs-7">
+        </div>
+        <div class="col-lg-5 col-sm-5 col-md-5 col-xs-5">
 
         </div>
       </div>
@@ -31,7 +34,8 @@ export default {
     return {
         types: "bubbles",
       size:"30%",
-      show:"1"
+      show:"1",
+      username:"symoon"
     }
   }
 }
