@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" style="height: calc(90vh)">
+  <div class="hello" style="height: calc(90vh);overflow-y:auto">
     <div v-if="show">
       <spinner :type="types" :size="size" class="center-spin"></spinner>
       <strong class="center-spin" style="font-size: 100%">我的猫开发中</strong>
@@ -10,7 +10,7 @@
           <img :src="useravatar" alt="..." class="img-circle img_auto center-spin">
         </div>
         <div class="col-lg-8 col-sm-8 col-md-8 col-xs-8" style="height: 100%;">
-          <div style="color: white;font-size: 100%;width: 100%;height: 100%;margin-top: 15%">
+          <div style="color: white;font-size: 100%;width: 100%;height: 100%;margin-top: 6vh">
             <div>
               <strong>{{username}}</strong>
             </div>
@@ -18,15 +18,21 @@
               <div>
                 <img :src="levelimg" class=" icon_auto" style="vertical-align:middle;"> <strong>{{level}}</strong>
               </div>
-
-
             </div>
           </div>
         </div>
 
       </div>
 
+      <div class="row">
+    我的猫
+
+      </div>
+
     </div>
+
+
+
   </div>
 </template>
 
@@ -45,7 +51,7 @@
         size: "30%",
         show: "",
         username: "请登录用户",
-        level: "撸猫大师",
+        level: "",
         useravatar: "",
         levelimg: "",
       }
@@ -91,6 +97,10 @@
     /*margin:auto;*/
     /*margin-top: 4%;*/
     /*border-radius:15px;*/
+  }
+
+  .hello::-webkit-scrollbar{
+    display: none;
   }
 
 
