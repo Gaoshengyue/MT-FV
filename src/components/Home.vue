@@ -62,7 +62,6 @@
     methods: {
       GetUserDetail() {
         axios.get("http://172.31.66.21:8000/user_detail/").then(response => {
-          console.log(response.data)
           this.username = response.data.data.username
           this.useravatar = "http://172.31.66.21:8000" + response.data.data.user_avatar
           this.level = response.data.data.level
