@@ -2,7 +2,7 @@
   <div class="foot">
 
     <tabbar>
-      <tabbar-item selected  link="/">
+      <tabbar-item  link="/">
         <img slot="icon" src="../assets/home/share.png">
         <img slot="icon-active" src="../assets/home/blueshare.png">
         <span slot="label">猫态</span>

@@ -1,27 +1,29 @@
 <template>
   <div class="hello" style="height: calc(90vh)">
     <div v-if="show">
-<spinner :type="types" :size="size" class="center-spin"></spinner>
-    <strong class="center-spin" style="font-size: 100%">我的猫开发中</strong>
-      </div>
-    <div v-else class="container-fluid" >
+      <spinner :type="types" :size="size" class="center-spin"></spinner>
+      <strong class="center-spin" style="font-size: 100%">我的猫开发中</strong>
+    </div>
+    <div v-else class="container-fluid">
       <div class="row" style="background-color: lightcoral;height: calc(20vh)">
         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4" style="height: 100%;">
-          <img src="../assets/head/起司.jpg" alt="..." class="img-circle img_auto center-spin" >
+          <img :src="useravatar" alt="..." class="img-circle img_auto center-spin">
         </div>
-        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="height: 100%;">
-        <div style="color: white;font-size: 100%" class="center-top">
-          <div class="row" >
-          <strong >{{username}}</strong>
+        <div class="col-lg-8 col-sm-8 col-md-8 col-xs-8" style="height: 100%;">
+          <div style="color: white;font-size: 100%;width: 100%;height: 100%;margin-top: 15%">
+            <div>
+              <strong>{{username}}</strong>
             </div>
-          <div class="row" style="margin-top: 30%">
-            <strong >{{level}}</strong>
+            <div>
+              <div>
+                <img :src="levelimg" class=" icon_auto" style="vertical-align:middle;"> <strong>{{level}}</strong>
+              </div>
+
+
+            </div>
           </div>
         </div>
-        </div>
-        <div class="col-lg-5 col-sm-5 col-md-5 col-xs-5">
 
-        </div>
       </div>
 
     </div>
@@ -29,34 +31,67 @@
 </template>
 
 <script>
- import { Spinner } from 'vux'
-export default {
-  name: 'HelloWorld',
-  components:{
-    Spinner
-  },
-  data () {
-    return {
+  import axios from 'axios'
+  import {Spinner} from 'vux'
+
+  export default {
+    name: 'HelloWorld',
+    components: {
+      Spinner
+    },
+    data() {
+      return {
         types: "bubbles",
-      size:"30%",
-      show:"",
-      username:"请登录用户",
-    level:"撸猫大师"
+        size: "30%",
+        show: "",
+        username: "请登录用户",
+        level: "撸猫大师",
+        useravatar: "",
+        levelimg: "",
+      }
+    },
+    mounted() {
+      this.GetUserDetail()
+    },
+    methods: {
+      GetUserDetail() {
+        axios.get("http://172.31.66.21:8000/user_detail/").then(response => {
+          console.log(response.data)
+          this.username = response.data.data.username
+          this.useravatar = "http://172.31.66.21:8000" + response.data.data.user_avatar
+          this.level = response.data.data.level
+          this.levelimg = "http://172.31.66.21:8000" + response.data.data.level_img
+
+        })
+
+
+      }
     }
+
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .img_auto{
-      max-width: 80%;
-      display: block;
-      height: auto;
-      margin:auto;
-      /*margin-top: 100%;*/
-      /*border-radius:15px;*/
-    }
+  .img_auto {
+    max-width: 100%;
+    max-height: 80%;
+    display: block;
+    height: auto;
+    margin: auto;
+    /*margin-top: 100%;*/
+    /*border-radius:15px;*/
+  }
+
+  .icon_auto {
+    max-width: 3vh;
+    max-height: 3vh;
+    /*display: block;*/
+    height: auto;
+    /*margin:auto;*/
+    /*margin-top: 4%;*/
+    /*border-radius:15px;*/
+  }
 
 
 </style>
