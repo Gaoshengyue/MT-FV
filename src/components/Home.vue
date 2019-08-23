@@ -9,20 +9,39 @@
         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4" style="height: 100%;">
           <img :src="useravatar" alt="..." class="img-circle img_auto center-spin">
         </div>
-        <div class="col-lg-8 col-sm-8 col-md-8 col-xs-8" style="height: 100%;">
+        <div class="col-lg-5 col-sm-5 col-md-5 col-xs-5" style="height: 100%;">
           <div style="color: white;font-size: 100%;width: 100%;height: 100%;margin-top: 6vh">
             <div>
               <strong>{{username}}</strong>
             </div>
-            <div>
               <div>
                 <img :src="levelimg" class=" icon_auto" style="vertical-align:middle;"> <strong>{{level}}</strong>
               </div>
-            </div>
           </div>
         </div>
+  <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="height: 100%;">
+        <div class="vux-circle-demo">
+    <div style='width:80%;height:80%;'>
+
+      <x-circle
+        :percent="percent"
+        :stroke-width="6"
+        :trail-width="6"
+        :stroke-color="['#5cb85c','#36D1DC']"
+        trail-color="#ececec">
+        <span style="color:#36D1DC">{{ percent }}%</span>
+      </x-circle>
+      <div>
+              <div style="font-size: 1vh;color: white">
+                <img :src="next_img" class=" icon_auto" style="vertical-align:middle;"> <strong>{{next}}</strong>
+              </div>
+            </div>
+    </div>
+  </div>
 
       </div>
+      </div>
+
 
       <div class="row">
     我的猫
@@ -38,12 +57,13 @@
 
 <script>
   import axios from 'axios'
-  import {Spinner} from 'vux'
+  import {Spinner,XCircle} from 'vux'
 
   export default {
     name: 'HelloWorld',
     components: {
-      Spinner
+      Spinner,
+      XCircle
     },
     data() {
       return {
@@ -54,6 +74,9 @@
         level: "",
         useravatar: "",
         levelimg: "",
+         percent: 0,
+        next:"",
+        next_img:""
       }
     },
     mounted() {
@@ -66,6 +89,9 @@
           this.useravatar = "http://172.31.66.21:8000" + response.data.data.user_avatar
           this.level = response.data.data.level
           this.levelimg = "http://172.31.66.21:8000" + response.data.data.level_img
+          this.next=response.data.data.next
+          this.next_img="http://172.31.66.21:8000"+response.data.data.next_img
+          this.percent=parseInt((response.data.data.experience/response.data.data.next_experience)*100)
 
         })
 
@@ -101,6 +127,14 @@
   .hello::-webkit-scrollbar{
     display: none;
   }
+  .vux-circle-demo {
+  padding-top: 20px;
+  text-align: center;
+}
+.vux-circle-demo > div {
+  margin: 0 auto;
+}
+
 
 
 </style>
