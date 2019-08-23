@@ -21,7 +21,7 @@
         </div>
   <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" style="height: 100%;">
         <div class="vux-circle-demo">
-    <div style='width:80%;height:80%;'>
+    <div style='width:10vh;height:10vh;'>
 
       <x-circle
         :percent="percent"
