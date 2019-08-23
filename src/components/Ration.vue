@@ -6,6 +6,7 @@
 </template>
 
 <script>
+   import { Spinner } from 'vux'
 export default {
   name: 'Commodity',
   data () {

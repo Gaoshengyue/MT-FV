@@ -7,12 +7,12 @@
 </template>
 
 <script>
-  // import { Spinner, Group, Cell } from 'vux'
+  import { Spinner, Group, Cell } from 'vux'
 export default {
   name: 'Comment',
-  //  components: {
-  //   Spinner,
-  // },
+   components: {
+    Spinner,
+  },
   data () {
     return {
  types: "lines",

@@ -2,7 +2,7 @@
   <div class="foot">
 
     <tabbar>
-      <tabbar-item link="/comment">
+      <tabbar-item selected  link="/">
         <img slot="icon" src="../assets/home/share.png">
         <img slot="icon-active" src="../assets/home/blueshare.png">
         <span slot="label">猫态</span>
@@ -23,7 +23,7 @@
         <img slot="icon-active" src="../assets/home/bluefriend.png">
         <span slot="label">伙伴</span>
       </tabbar-item>
-      <tabbar-item selected badge="2" link="/">
+      <tabbar-item  badge="2" link="/home">
         <!--<span class="remixicon-home-heart-fill"></span>-->
         <img slot="icon" src="../assets/home/cat.png" >
         <img slot="icon-active" src="../assets/home/bluecat.png">
@@ -58,10 +58,12 @@ export default {
 <style scoped>
 
   .foot{
-margin-top: calc(80%);
-    height: calc(20%);
+/*margin-top: calc(80%);*/
+    height: calc(10%);
     width: calc(100%);
     background: white;
 
   }
+
+
 </style>

@@ -6,8 +6,12 @@
 </template>
 
 <script>
+   import { Spinner } from 'vux'
 export default {
   name: 'Commodity',
+   components: {
+    Spinner,
+  },
   data () {
     return {
       types: "dots",

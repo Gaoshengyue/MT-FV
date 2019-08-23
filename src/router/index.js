@@ -12,7 +12,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
       component: Home
     },
@@ -22,7 +22,8 @@ export default new Router({
       component: Foot
     },
      {
-      path: '/comment',
+
+      path: '/',
       name: 'Comment',
       component: Comment
     },
