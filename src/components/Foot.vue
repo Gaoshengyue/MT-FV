@@ -23,7 +23,7 @@
         <img slot="icon-active" src="../assets/home/bluefriend.png">
         <span slot="label">伙伴</span>
       </tabbar-item>
-      <tabbar-item  badge="2" link="/home">
+      <tabbar-item  badge="10" link="/home">
         <!--<span class="remixicon-home-heart-fill"></span>-->
         <img slot="icon" src="../assets/home/cat.png" >
         <img slot="icon-active" src="../assets/home/bluecat.png">

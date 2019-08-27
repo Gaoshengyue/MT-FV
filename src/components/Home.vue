@@ -1,5 +1,6 @@
 <template>
   <div class="hello" style="height: calc(90vh);overflow-y:auto">
+
     <div v-if="show">
       <spinner :type="types" :size="size" class="center-spin"></spinner>
       <strong class="center-spin" style="font-size: 100%">我的猫开发中</strong>
@@ -71,6 +72,34 @@
     </card>
 
       </div>
+      <div class="row">
+            <divider>{{list_title}}</divider>
+       <div v-if="list">
+        <!--<group :title="$t('Switch the type')">-->
+          <!--<radio title="type" v-model="type" :options="['1', '2', '3', '4', '方式']"></radio>-->
+        <!--</group>-->
+          <!--:footer="footer"-->
+        <panel :header="cat_list" :list="list" :type="type" @on-img-error="onImgError"></panel>
+  </div>
+
+        <div v-else>
+<!--添加-->
+        </div>
+
+      </div>
+
+      <div class="row" style="padding: 15px">
+        <divider>{{img_list}}</divider>
+ <button-tab v-model="select_data">
+        <button-tab-item @on-item-click="consoleIndex()">文章</button-tab-item>
+        <button-tab-item @on-item-click="consoleIndex()">装备</button-tab-item>
+      </button-tab>
+        <br>
+         <button-tab v-model="select_data">
+        <button-tab-item>{{ article_cate}}</button-tab-item>
+        <button-tab-item>{{ goods_cate }}</button-tab-item>
+      </button-tab>
+      </div>
 
     </div>
 
@@ -81,15 +110,20 @@
 
 <script>
   import axios from 'axios'
-  import {Spinner,XCircle,Card,Divider} from 'vux'
+  import {Spinner,XCircle,Card,Divider,Panel, Group, Radio, XHeader ,TransferDom ,ButtonTab, ButtonTabItem} from 'vux'
 
   export default {
     name: 'HelloWorld',
+     directives: {
+    TransferDom
+  },
     components: {
       Spinner,
       XCircle,
       Card,
-      Divider
+      Divider,
+      Panel,
+       Group, Radio,ButtonTab, ButtonTabItem
     },
     data() {
       return {
@@ -108,7 +142,37 @@
         cat_shit_day:"铲屎天数",
         have_cat:"拥有的猫",
         pay_eq:"购买装备",
-        share:"分享文章"
+        share:"分享文章",
+        list_title:"我的猫",
+        cat_list:"猫咪们",
+        img_list:"喵生",
+      type: '1',
+         list: [{
+        src: 'http://172.31.66.21:8000/media/avatar/IMG_20190818_111814.jpg',
+        // fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+        title: '可乐',
+        // desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        // url: '/component/cell'
+      },
+        //    {
+        // src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+        // title: '标题二',
+        // desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        // // url: {
+        // //   path: '/component/radio',
+        // //   replace: false
+        // // },
+        // meta: {
+        //   source: '来源信息',
+        //   date: '时间',
+        //   other: '其他信息'
+        // }
+      // }
+      ],
+
+        article_cate:"最新喵态",
+        goods_cate:"最新装备",
+        select_data:0
 
       }
     },
@@ -129,7 +193,14 @@
         })
 
 
-      }
+      },
+        onImgError (item, $event) {
+      console.log(item, $event)
+    },
+       consoleIndex () {
+      console.log('click demo01', this.select_data)
+    }
+
     }
 
   }
@@ -145,6 +216,9 @@
     margin: auto;
     /*margin-top: 100%;*/
     /*border-radius:15px;*/
+  }
+  .img-border{
+    solid-color: white;
   }
 
   .icon_auto {
