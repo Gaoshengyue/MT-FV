@@ -44,7 +44,31 @@
 
 
       <div class="row">
-    我的猫
+      <!--<divider>{{ title_msg }}</divider>-->
+	   <card :header="{title:life}">
+      <div slot="content" class="card-demo-flex card-demo-content01">
+        <div class="vux-1px-r">
+          <span>1130</span>
+          <br/>
+          {{ cat_shit_day }}
+        </div>
+        <div class="vux-1px-r">
+          <span>1</span>
+          <br/>
+          {{ have_cat }}
+        </div>
+        <div class="vux-1px-r">
+          <span>0</span>
+          <br/>
+          {{ pay_eq }}
+        </div>
+        <div>
+          <span>88</span>
+          <br/>
+          {{ share}}
+        </div>
+      </div>
+    </card>
 
       </div>
 
@@ -57,13 +81,15 @@
 
 <script>
   import axios from 'axios'
-  import {Spinner,XCircle} from 'vux'
+  import {Spinner,XCircle,Card,Divider} from 'vux'
 
   export default {
     name: 'HelloWorld',
     components: {
       Spinner,
-      XCircle
+      XCircle,
+      Card,
+      Divider
     },
     data() {
       return {
@@ -76,7 +102,14 @@
         levelimg: "",
          percent: 0,
         next:"",
-        next_img:""
+        next_img:"",
+        title_msg:"我的猫",
+        life:"生涯",
+        cat_shit_day:"铲屎天数",
+        have_cat:"拥有的猫",
+        pay_eq:"购买装备",
+        share:"分享文章"
+
       }
     },
     mounted() {
@@ -135,6 +168,24 @@
   margin: 0 auto;
 }
 
+@import '~vux/src/styles/1px.less';
 
+.card-demo-flex {
+  display: flex;
+}
+.card-demo-content01 {
+  padding: 10px 0;
+}
+.card-padding {
+  padding: 15px;
+}
+.card-demo-flex > div {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+}
+.card-demo-flex span {
+  color: #f74c31;
+}
 
 </style>
