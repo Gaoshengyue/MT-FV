@@ -8,7 +8,7 @@
     <div v-else class="container-fluid">
       <div class="row" style="background-color: lightcoral;height: calc(20vh)">
         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4" style="height: 100%;">
-          <img :src="useravatar" alt="..." class="img-circle img_auto center-spin">
+          <img :src="useravatar" alt="..." class="img-circle img_auto center-spin img-border" style="margin-left: 3%">
         </div>
         <div class="col-lg-5 col-sm-5 col-md-5 col-xs-5" style="height: 100%;">
           <div style="color: white;font-size: 100%;width: 100%;height: 100%;margin-top: 6vh">
@@ -91,7 +91,7 @@
       <div class="row" style="padding: 15px">
         <divider>{{img_list}}</divider>
  <button-tab v-model="select_data">
-        <button-tab-item @on-item-click="consoleIndex()">文章</button-tab-item>
+        <button-tab-item @on-item-click="consoleIndex()">喵态</button-tab-item>
         <button-tab-item @on-item-click="consoleIndex()">装备</button-tab-item>
       </button-tab>
         <br>
@@ -132,7 +132,7 @@
         show: "",
         username: "请登录用户",
         level: "",
-        useravatar: "",
+        useravatar: "../static/cathand.png",
         levelimg: "",
          percent: 0,
         next:"",
@@ -218,7 +218,7 @@
     /*border-radius:15px;*/
   }
   .img-border{
-    solid-color: white;
+    border:solid 4px white;
   }
 
   .icon_auto {
