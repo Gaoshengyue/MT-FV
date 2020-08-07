@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "cube-ui": "^1.12.27",
     "install": "^0.12.2",
     "postcss-aspect-ratio-mini": "^1.0.1",

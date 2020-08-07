@@ -148,7 +148,7 @@
         img_list:"喵生",
       type: '1',
          list: [{
-        src: 'http://172.31.66.21:8000/media/avatar/IMG_20190818_111814.jpg',
+        src: '/media/avatar/timg.jpg',
         // fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
         title: '可乐',
         // desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
@@ -181,16 +181,16 @@
     },
     methods: {
       GetUserDetail() {
-        axios.get("http://172.31.66.21:8000/user_detail/").then(response => {
-          this.username = response.data.data.username
-          this.useravatar = "http://172.31.66.21:8000" + response.data.data.user_avatar
-          this.level = response.data.data.level
-          this.levelimg = "http://172.31.66.21:8000" + response.data.data.level_img
-          this.next=response.data.data.next
-          this.next_img="http://172.31.66.21:8000"+response.data.data.next_img
-          this.percent=parseInt((response.data.data.experience/response.data.data.next_experience)*100)
+          this.$store.dispatch('business/getUserDetail').then((res)=>{
+                  this.username = res.data.username
+          this.useravatar =  res.data.user_avatar
+          this.level = res.data.level
+          this.levelimg =  res.data.level_img
+          this.next=res.data.next
+          this.next_img=res.data.next_img
+          this.percent=parseInt((res.data.experience/res.data.next_experience)*100)
+          })
 
-        })
 
 
       },
