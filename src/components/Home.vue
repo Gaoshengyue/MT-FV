@@ -8,7 +8,7 @@
     <div v-else class="container-fluid">
       <div class="row" style="background-color: lightcoral;height: calc(20vh)">
         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4" style="height: 100%;">
-          <img :src="useravatar" alt="..." class="img-circle img_auto center-spin img-border" style="margin-left: 3%">
+          <img :src="useravatar" alt="..." class="img-circle img_auto center-spin img-border" style="margin-left: 3%" width="100%" height="100%">
         </div>
         <div class="col-lg-5 col-sm-5 col-md-5 col-xs-5" style="height: 100%;">
           <div style="color: white;font-size: 100%;width: 100%;height: 100%;margin-top: 6vh">
@@ -169,11 +169,9 @@
         // }
       // }
       ],
-
         article_cate:"最新喵态",
         goods_cate:"最新装备",
         select_data:0
-
       }
     },
     mounted() {
