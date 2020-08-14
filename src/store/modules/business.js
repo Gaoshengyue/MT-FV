@@ -4,14 +4,6 @@ const mutations = {}
 
 const actions = {
 
-  // getExamScoreHistory({commit},param){
-  //   return new Promise((resolve, reject) => {
-  //     getExamScoreHistory(param).then(response => {
-  //       console.log(response)
-  //       resolve(response)
-  //     })
-  //   })
-  // },
   getUserDetail({commit},param){
     return new Promise((resolve,reject)=>{
       getUserDetail().then(response=>{
